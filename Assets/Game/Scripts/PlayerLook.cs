@@ -12,7 +12,6 @@ public class PlayerLook : MonoBehaviour
     public void ProcessLook(Vector2 input) {
         float mouseX = input.x;
         float mouseY = input.y;
-        Debug.Log(mouseY);
 
         xRotation -= mouseY * YSensitivity * Time.deltaTime; // sensitivity controls
         xRotation = Mathf.Clamp(xRotation, -80f, 80f); // look limits
@@ -21,6 +20,5 @@ public class PlayerLook : MonoBehaviour
 
         Vector3 playerBodyRotation = new Vector3(0, mouseX * xSensitivity * Time.deltaTime, 0);
         transform.Rotate(playerBodyRotation);
-
     }
 }
