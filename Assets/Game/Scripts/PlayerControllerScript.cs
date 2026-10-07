@@ -26,6 +26,7 @@ public class PlayerControllerScript : MonoBehaviour
     } 
 
     public void ProcessJump() {
-        playerVelocity.y = Mathf.Sqrt(jumpHeight * -1f * gravity);
+        if (controller.isGrounded)
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -1f * gravity);
     }
 }
