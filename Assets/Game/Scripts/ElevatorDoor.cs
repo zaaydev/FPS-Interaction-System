@@ -5,12 +5,24 @@ public class ElevatorDoor : InteractableScript
     [SerializeField] private Animator door1Animator;
     [SerializeField] private Animator door2Animator;
     [SerializeField] private Renderer buttonRenderer;
+    private bool isOpen;
+
 
     public override void Interact()
     {
-        door1Animator.Play("Door1_Open");
-        door2Animator.Play("Door2_Open");
+        isOpen = door1Animator.GetBool("isOpen");
+        door1Animator.SetBool("isOpen", !isOpen);
+        door2Animator.SetBool("isOpen2", !isOpen);
 
-        buttonRenderer.material.color = Color.green;
+        if (isOpen == true)
+        {
+            buttonRenderer.material.color = Color.green;
+            buttonRenderer.material.SetColor("_EmissionColor", Color.green * 3f);
+        }
+        else
+        {
+            buttonRenderer.material.color = Color.red;
+            buttonRenderer.material.SetColor("_EmissionColor", Color.red * 3f);
+        }
     }
 }

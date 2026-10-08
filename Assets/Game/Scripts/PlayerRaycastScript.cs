@@ -4,8 +4,9 @@ public class PlayerRaycastScript : MonoBehaviour
 {
     [SerializeField] private float rayDistance = 5f;
     [SerializeField] private Camera cam; 
-    RaycastHit hit;
     [SerializeField] private TMPro.TMP_Text interactionText;
+    [SerializeField] private LayerMask layerMask;
+    RaycastHit hit; 
 
     private InteractableScript interactableScript;
 
@@ -13,9 +14,9 @@ public class PlayerRaycastScript : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(cam.transform.position, cam.transform.forward * rayDistance, Color.red);
-        interactionText.text = "";
+        interactionText.text = string.Empty;
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, rayDistance)) {
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, rayDistance, layerMask)) {
 
             if (hit.collider.TryGetComponent(out interactableScript)) {
                 interactionText.text = "[E] " + interactableScript.interactionMessage;

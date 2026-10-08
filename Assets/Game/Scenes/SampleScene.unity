@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorDoor
   interactionMessage: Open Door
   door1Animator: {fileID: 1270072626}
-  door2Animator: {fileID: 2558397402544832146}
+  door2Animator: {fileID: 2558397402544832152}
   buttonRenderer: {fileID: 1566928749}
 --- !u!23 &1566928749 stripped
 MeshRenderer:
@@ -1448,6 +1448,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.032
       objectReference: {fileID: 0}
+    - target: {fileID: 2448522830753944229, guid: f65a8a841a7f56542bcb4b16d23e2ac6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4463175635308901438, guid: f65a8a841a7f56542bcb4b16d23e2ac6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1532,7 +1536,7 @@ PrefabInstance:
       addedObject: {fileID: 1270072626}
     - targetCorrespondingSourceObject: {fileID: 2798521755293240068, guid: f65a8a841a7f56542bcb4b16d23e2ac6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2558397402544832146}
+      addedObject: {fileID: 2558397402544832152}
     - targetCorrespondingSourceObject: {fileID: 1838681638318759756, guid: f65a8a841a7f56542bcb4b16d23e2ac6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 964637499}
@@ -1553,17 +1557,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4788892795426703457, guid: f65a8a841a7f56542bcb4b16d23e2ac6, type: 3}
   m_PrefabInstance: {fileID: 2558397402544832143}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2558397402544832146
+--- !u!95 &2558397402544832147
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2558397402544832144}
+  m_GameObject: {fileID: 2558397402544832145}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee38dacc7c2b54549ac7c48dc6b0ba9b, type: 2}
+  m_Controller: {fileID: 9100000, guid: c1fc383dc06d5364798c70b7ac3330eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1575,17 +1579,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!95 &2558397402544832147
+--- !u!95 &2558397402544832152
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2558397402544832145}
+  m_GameObject: {fileID: 2558397402544832144}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee38dacc7c2b54549ac7c48dc6b0ba9b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1731,6 +1735,9 @@ MonoBehaviour:
   rayDistance: 5
   cam: {fileID: 330585545}
   interactionText: {fileID: 1851658740}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
