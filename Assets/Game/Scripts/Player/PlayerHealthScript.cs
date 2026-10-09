@@ -12,16 +12,6 @@ public class PlayerHealthScript : MonoBehaviour
         health = maxHealth;
     }
 
-    private void Update() {
-  
-    }
-
-    private void UpdateHealthUI() {
-        // fillFront = frontHealthBar.fillAmount;
-        // fillBack = frontHealthBar.fillAmount;
-
-        frontHealthBar.fillAmount = 0.5f;
-    }
 
     private void TakeDamage(float damage) {
         health -= damage;
