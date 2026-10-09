@@ -14,11 +14,11 @@ public class ElevatorDoor : InteractableScript
         door1Animator.SetBool("isOpen", !isOpen);
         door2Animator.SetBool("isOpen2", !isOpen);
 
-        if (isOpen == true)
+        if (!isOpen)
         {
             buttonRenderer.material.color = Color.green;
             buttonRenderer.material.SetColor("_EmissionColor", Color.green * 3f);
-        }
+        } 
         else
         {
             buttonRenderer.material.color = Color.red;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerRaycastScript : MonoBehaviour
 {
-    [SerializeField] private float rayDistance = 5f;
+    [SerializeField] private float rayDistance = 3f;
     [SerializeField] private Camera cam; 
     [SerializeField] private TMPro.TMP_Text interactionText;
     [SerializeField] private LayerMask layerMask;
@@ -25,8 +25,11 @@ public class PlayerRaycastScript : MonoBehaviour
     }
 
     public void Process_E_Interact() {
-        if (interactableScript != null) {
-            interactableScript.Interact();
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, rayDistance, layerMask)) {
+            if (hit.collider.TryGetComponent(out interactableScript)) {
+                interactableScript.Interact();
+            }
+
         }
     }
 }
